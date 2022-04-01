@@ -1,4 +1,3 @@
-import Expenses from './Expenses';
 import './Card.css';
 function Card(props) {
   const classes = 'card ' + props.className;

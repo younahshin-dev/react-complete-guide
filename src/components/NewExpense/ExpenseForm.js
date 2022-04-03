@@ -47,6 +47,10 @@ const ExpenseForm = (props) => {
     });
   };
 
+  const cancelHandler = (event) => {
+    event.preventDefault();
+    props.onClickCancel();
+  };
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -98,6 +102,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
+        <button onClick={cancelHandler}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>

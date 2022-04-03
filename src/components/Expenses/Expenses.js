@@ -5,7 +5,7 @@ import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 
 const Expenses = (props) => {
-  const [filterYear, setFilterYear] = useState('2021');
+  const [filterYear, setFilterYear] = useState('2022');
 
   const selectYearHandler = (selectedYear) => {
     //console.log(selectedYear);
@@ -15,6 +15,18 @@ const Expenses = (props) => {
     return expense.date.getFullYear() === parseInt(filterYear);
   });
 
+  let expensesContent = <p>No expenses found.</p>;
+  if (filteredList.length > 0) {
+    expensesContent = filteredList.map((expenses) => (
+      <ExpenseItem
+        key={expenses.id}
+        date={expenses.date}
+        title={expenses.title}
+        amount={expenses.amount}
+      />
+    ));
+  }
+
   return (
     <div>
       <Card className='expenses'>
@@ -22,14 +34,7 @@ const Expenses = (props) => {
           selectedYear={filterYear}
           onSelectYear={selectYearHandler}
         />
-        {filteredList.map((expenses) => (
-          <ExpenseItem
-            key={expenses.id}
-            date={expenses.date}
-            title={expenses.title}
-            amount={expenses.amount}
-          />
-        ))}
+        {expensesContent}
       </Card>
     </div>
   );

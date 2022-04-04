@@ -49,14 +49,14 @@ const ExpenseForm = (props) => {
 
   const cancelHandler = (event) => {
     event.preventDefault();
-    props.onClickCancel();
+    props.onCancel();
   };
   const submitHandler = (event) => {
     event.preventDefault();
 
     const expenseData = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount, //숫자 변환
       date: new Date(userInput.enteredDate),
     };
 
@@ -102,7 +102,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
-        <button onClick={cancelHandler}>Cancel</button>
+        <button type='button' onClick={cancelHandler}>
+          Cancel
+        </button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>

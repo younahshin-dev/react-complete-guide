@@ -6,25 +6,25 @@ const DUMMY_EXPENSES = [
   {
     id: 'e1',
     title: 'Toilet Paper',
-    amount: '12.05',
+    amount: 12.05,
     date: new Date(2022, 4, 1),
   },
   {
     id: 'e2',
     title: 'Car insurance',
-    amount: '264.65',
+    amount: 264.65,
     date: new Date(2022, 3, 26),
   },
   {
     id: 'e3',
     title: 'dog food',
-    amount: '100.38',
+    amount: 100.38,
     date: new Date(2022, 1, 3),
   },
   {
     id: 'e4',
     title: 'Water 1.25L',
-    amount: '0.8',
+    amount: 0.8,
     date: new Date(2022, 4, 1),
   },
 ];
